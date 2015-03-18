@@ -33,14 +33,14 @@ var server = http.Server(function(req, res) {
   }).on('end', function() {
     clearTimeout(timeout);
     server.close();
+    res.writeHead(200);
+    res.end('hello world\n');
   });
 
   var timeout = setTimeout(function() {
     process.exit(1);
-  }, 100);
+  }, 200);
 
-  res.writeHead(200);
-  res.end('hello world\n');
 });
 
 server.listen(common.PORT, function() {
