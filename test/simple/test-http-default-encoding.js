@@ -37,10 +37,6 @@ var server = http.Server(function(req, res) {
     res.end('hello world\n');
   });
 
-  var timeout = setTimeout(function() {
-    process.exit(1);
-  }, 200);
-
 });
 
 server.listen(common.PORT, function() {
